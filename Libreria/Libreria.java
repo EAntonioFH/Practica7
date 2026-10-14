@@ -6,18 +6,18 @@ public class Libreria {
     private String horario;
     private ArrayList<Libro> libros;
     private Direccion localizacion;
+    private Empleado mostrador;
+    public static int cantidadLibros = 0;
 
-    public Libreria(String nombre, String direccion, String telefono, String horario) {
+    public Libreria(String nombre, String telefono, String horario) {
         this.nombre = nombre;
-        this.direccion = direccion;
         this.telefono = telefono;
         this.horario = horario;
         this.libros = new ArrayList<>();
     }
 
-    public Libreria(String nombre, String direccion, String telefono, String horario, Direccion localizacion) {
+    public Libreria(String nombre, String telefono, String horario, Direccion localizacion) {
         this.nombre = nombre;
-        this.direccion = direccion;
         this.telefono = telefono;
         this.horario = horario;
         this.libros = new ArrayList<>();
@@ -26,14 +26,12 @@ public class Libreria {
 
     public void agregarLibro(Libro libro) {
         libros.add(libro);
+        cantidadLibros++;
     }
 
-    public void eliminarLibro(Libro libro) {
-        libros.remove(libro);
-    }
-
-    public ArrayList<Libro> getLibros() {
-        return libros;
+    public void getLibros() {
+        for(Libro libro : libros)
+            System.out.println("Titulo: " + libro.getTitulo());
     }
 
     public String getNombre() {
@@ -44,7 +42,6 @@ public class Libreria {
         this.nombre = nombre;
     }
 
-  
     public String getTelefono() {
         return telefono;
     }
@@ -67,5 +64,29 @@ public class Libreria {
 
     public void setLocalizacion(Direccion localizacion) {
         this.localizacion = localizacion;
+    }
+
+    public Empleado getEmpleado()
+    {
+        return mostrador;
+    }
+
+    public void setEmpleado(Empleado mostrador)
+    {
+        this.mostrador = mostrador;
+    }
+
+    public void facturaCompra(Cliente comprador, Libro ejemplar)
+    {
+        System.out.println("\n\tTICKET DE COMPRA");
+        System.out.println("Cliente: " + comprador.getNombre());
+        System.out.println("Libro: " + ejemplar.getTitulo());
+        System.out.println("Autor: " + ejemplar.getAutor().getNombreCompleto());
+        System.out.println("Precio: $" + ejemplar.getPrecio());
+        System.out.println("Num tarjeta: " + comprador.getNumTarjeta());
+        System.out.println("Despacho: " + this.getEmpleado().getNombre());
+        System.out.println("GRACIAS POR SU COMPRA");
+
+        comprador.agregarColeccion(ejemplar);
     }
 }

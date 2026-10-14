@@ -21,7 +21,7 @@ public abstract class Usuario
 
     public int getEdad()
     {
-        return nombre;
+        return edad;
     }
 
     public void setEdad(int nombre)

@@ -8,7 +8,7 @@ public class Cliente extends Usuario
     public Cliente(String nombre, int edad, String numTarjeta)
     {
         super(nombre, edad);
-        this.edad = edad;
+        this.numTarjeta = numTarjeta;
         this.coleccion = new ArrayList<Libro>();
     }
 
@@ -25,5 +25,15 @@ public class Cliente extends Usuario
     public void agregarColeccion(Libro ejemplar)
     {
         coleccion.add(ejemplar);
+    }
+
+    public void getcoleccion()
+    {
+        System.out.println("Libros en la coleccion de " + this.getNombre());
+        
+        for(Libro libro : coleccion)
+        {
+            System.out.println("Titulo: " + libro.getTitulo());
+        }
     }
 }

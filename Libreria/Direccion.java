@@ -26,57 +26,57 @@ public class Direccion
         this.pais = pais;
     }
 
-    public String getCalle
+    public String getCalle()
     {
         return calle;        
     }
-    public int getNumeroExterior
+    public int getNumeroExterior()
     {
         return numeroExterior;
     }
-    public int getNumeroInterior
+    public int getNumeroInterior()
     {
         return numeroInterior;
     }
-    public String getColonia
+    public String getColonia()
     {
         return colonia;
     }
-    public String getCiudad
+    public String getCiudad()
     {
         return ciudad;
     }
-    public String getPais
+    public String getPais()
     {
         return pais;
     }
 
-    public void setCalle
+    public void setCalle(String calle)
     {
-        return calle;
+        this.calle = calle;
     }
-    public void setNumeroExterior
+    public void setNumeroExterior(int numeroExterior)
     {
-        return numeroExterior;
+        this.numeroExterior = numeroExterior;
     }
-    public void setNumeroInterior
+    public void setNumeroInterior(int numeroInterior)
     {
-        return numeroInterior;
+        this.numeroInterior = numeroInterior;
     }
-    public void setColonia
+    public void setColonia(String colonia)
     {
-        return colonia;
+        this.colonia = colonia;
     }
-    public void setCiudad
+    public void setCiudad(String ciudad)
     {
-        return ciudad;
+        this.ciudad = ciudad;
     }
-    public void setPais
+    public void setPais(String pais)
     {
-        return pais;
+        this.pais = pais;
     }
 
-    @override
+    @Override
     public String toString()
     {
         return String.format("\n\t%s ,%s ,%s ,%s, #%d ,numinterior #%d", pais, ciudad, colonia, calle, numeroExterior, numeroInterior);
