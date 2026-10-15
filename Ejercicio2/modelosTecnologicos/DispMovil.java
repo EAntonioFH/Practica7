@@ -4,18 +4,20 @@ package modelosTecnologicos;
 class DispMovil extends Dispositivo{
 
 	//Atributos
-	protected int nBotones;
 	protected boolean puertoAudi;
+	protected int camaraW;
+	protected int camaraH;
 
 	//Constructores
-	public Dispositivo(int pila, int dimPantalla, String modelo, String marca, String os, 
-				int nBotones, boolean puertoAudi){
-		super(pila,dimPantalla,modelo,marca,os);
-		this.nBotones=nBotones;
+	public DispMovil(int categoria,String marca, String os, int pila, int dimPantalla, double precio, boolean puertoAudi, 
+			int camaraW ,int camaraH){
+		super(categoria,marca,os,pila,dimPantalla,precio);
+		this.camaraW=camaraW;
+		this.camaraH=camaraH;
 		this.puertoAudi=puertoAudi;
 	}
 	@Override
-	protected String toString(){
-		return super.toString()+String.format("%d\n%s tiene puerto de audifonos\n",nBotones,((puertoAudi)?"Si":"No"));
+	public String toString(){
+		return super.toString()+String.format("Tiene audifonos alambricos: %b\nCamara: %dx%d\n", puertoAudi,camaraW,camaraH);
 	}
 }

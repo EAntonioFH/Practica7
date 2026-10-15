@@ -1,16 +1,23 @@
 
 package modelosTecnologicos;
 
-class Smartphone extends DispMovil{
+public class Smartphone extends DispMovil{
 
 	//Atributos
+	private boolean eSIM;
+	private int almacenamiento;
+
 	//Constructores
-	public Dispositivo(int pila, int dimPantalla, String modelo, String marca, String os, 
-				int nBotones, boolean puertoAudi){
-		super(pila,dimPantalla,modelo,marca,os,nBotones,puertosAudi);
+	public Smartphone(int categoria, String marca, String os, int pila, int dimPantalla, double precio, boolean puertoAudi, 
+			int camaraW, int camaraH, boolean eSIM, int almacenamiento){
+		super(categoria,marca,os,pila,dimPantalla,precio, puertoAudi,camaraW, camaraH);
+		this.eSIM=eSIM;
+		this.almacenamiento=almacenamiento;
 	}
+
+
 	@Override
-	protected String toString(){
-		return super.toString();
+	public String toString(){
+		return super.toString()+String.format("Tiene eSIM: %b\nAlmacenamiento: %d\n", eSIM, almacenamiento);
 	}
 }

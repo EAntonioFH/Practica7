@@ -1,16 +1,20 @@
 
 package modelosTecnologicos;
 
-class Computadora extends DispMovil{
-
+public abstract class Computadora extends Dispositivo{
 	//Atributos
-	//Constructores
-	public Dispositivo(int pila, int dimPantalla, String modelo, String marca, String os, 
-				int nBotones, boolean puertoAudi){
-		super(pila,dimPantalla,modelo,marca,os,nBotones,puertosAudi);
+	protected boolean tarjetaGrafica;
+	protected int lenTeclado;
+
+	//Constructoresp
+	public Computadora(int categoria, String marca, String os, int pila, int dimPantalla, 
+			double precio, boolean tarjetaGrafica, int lenTeclado){
+		super(categoria,marca,os,pila,dimPantalla,precio);
+		this.tarjetaGrafica=tarjetaGrafica;
+		this.lenTeclado=lenTeclado;
 	}
 	@Override
-	protected String toString(){
-		return super.toString();
+	public String toString(){
+		return super.toString()+ String.format("N. teclas: %d\nHay tarjeta?: %b\n", lenTeclado, tarjetaGrafica);
 	}
 }
